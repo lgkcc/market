@@ -24,4 +24,6 @@
 
 **[Ссылка на макет](https://www.figma.com/file/01OMPGFH0QlTMsHiqlbIuj/market?node-id=0%3A1)**
 
+**[Ссылка на backend](https://github.com/lgkcc/market-backend)**
+
 **P.S. Цели и стек проекта может пополняться по ходу разработки.**
