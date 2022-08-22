@@ -6,6 +6,7 @@ export const GeneralStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     background: #F5FFFA;
+    font-family: "Open  Sans", sans-serif;
   }
 
   a {
