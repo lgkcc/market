@@ -13,22 +13,25 @@ export const LeftSideBarWrapper = styled.div<{ isOpen: boolean }>`
 `
 export const LeftSideBarInner = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  min-height: 0;
 `
 export const ImageWrapper = styled.div`
   width: 100%;
   text-align: center;
   cursor: pointer;
-  padding: 1.55vh 0;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  height: calc(calc(100vh - 80px)/12);
   &:hover {
     background: rgba(255, 0, 0, 0.63);
   }
 `
 export const Image = styled.img`
-  transform: scale(1.2);
-
+  max-height: calc(calc(calc(100vh - 80px)/12) - 1.8vh);
+  height: 100%;
 `
 export const BurgerMenu = styled.div`
   width: 60px;
