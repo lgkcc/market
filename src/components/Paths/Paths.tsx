@@ -12,9 +12,8 @@ const Paths = () => {
     })
     const {pathname} = useLocation()
     const [, ...paths] = pathname.split('/')
-    console.log(paths)
     const objPath: { [key: string]: { [key: string]: string } } = {
-        menu: {title: "menu", path: "/menu"}
+        menu: {title: "меню", path: "/menu"}
     }
     const mapPath = paths.map((path, index) => {
         if(path.length > 0) {

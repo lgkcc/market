@@ -1,32 +1,59 @@
 import styled from "styled-components";
 
-export const LeftSideBarWrapper = styled.div<{ isOpen: boolean }>`
+export const LeftSideBarWrapper = styled.div<{ isOpen: boolean; isHidden: boolean }>`
   width: 90px;
-  height: ${props => props.isOpen ? "80px" : "100vh"};
+  height: ${props => props.isOpen ? "75px" : "100vh"};
   box-shadow: ${props => props.isOpen ? "2px 2px 4px 2px #00000040" : "2px 0 4px 2px #00000040"};
-  overflow: hidden;
+  overflow: ${props => props.isHidden ? "hidden" : "visible"};
   position: fixed;
   background-color: #FCFBFF;
   top: 0;
   left: 0;
   transition: 1s;
+  z-index: 10000000;
 `
 export const LeftSideBarInner = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 0;
 `
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div<{name: string}>`
   width: 100%;
   text-align: center;
   cursor: pointer;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 50px;
-  height: calc(calc(100vh - 80px)/12);
+  height: calc(calc(100vh - 75px) / 12);
+
   &:hover {
-    background: rgba(255, 0, 0, 0.63);
+    background: #ff7a7a;
+  }
+
+  &:after {
+    position: absolute;
+    display: flex;
+    content: ${props => `"${props.name}"`};
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    width: calc(100% + 40px);
+    height: 100%;
+    opacity: 0;
+    background: #ff7a7a;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 2px 2px 3px 2px #00000040;
+
+  }
+
+  &:hover:after {
+    opacity: 100%;
+    transition: .2s;
+    left: 90px;
   }
 `
 export const Image = styled.img`
@@ -38,7 +65,7 @@ export const BurgerMenu = styled.div`
   height: 45px;
   position: relative;
   transition-duration: 1s;
-  margin: 35px auto 0 auto;
+  margin: 30px auto 0 auto;
   cursor: pointer;
 `
 export const BurgerMenuInner = styled.span<{ isOpen: boolean }>`
