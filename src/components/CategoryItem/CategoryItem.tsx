@@ -2,18 +2,15 @@ import React from 'react';
 import {Image, Item, ItemTitle} from "./CategotyItem.styles";
 import img from "../../assets/img.jpg";
 import {ICategoryItemProps} from "./CategoryItem.interface";
-import {Link} from "react-router-dom";
 
-const CategoryItem:React.FC<ICategoryItemProps> = ({title, path}) => {
+const CategoryItem: React.FC<ICategoryItemProps> = ({title}) => {
     return (
-        <Link to={`/menu/${path}`}>
-            <Item>
-                <Image src={img}/>
-                <ItemTitle>
-                    {title}
-                </ItemTitle>
-            </Item>
-        </Link>
+        <Item>
+            <Image src={img}/>
+            <ItemTitle>
+                {title}
+            </ItemTitle>
+        </Item>
     );
 };
 

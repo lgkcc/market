@@ -16,12 +16,13 @@ const Paths = () => {
         menu: {title: "меню", path: "/menu"}
     }
     const mapPath = paths.map((path, index) => {
-        if(path.length > 0) {
+        if (path.length > 0) {
             if (paths.length - 1 === index) {
-                return <span key={path}>{" >> "}{objPath[path]?.title || categoryData?.find((category: any) => category.path === path)?.title || productData?.find((product: any) => product._id === path)?.title || ""}</span>
+                return <span
+                    key={path}>{" >> "}{(objPath[path]?.title || categoryData?.find((category: any) => category.path === path)?.title || productData?.find((product: any) => product._id === path)?.title || "").toLowerCase()}</span>
             }
             return path && <Link key={path}
-                                 to={`/${paths.slice(0, index+1).join("/")}`}>{" >> "}{objPath[path]?.title || categoryData?.find((category: any) => category.path === path)?.title || productData?.find((product: any) => product._id === path)?.title || ""}</Link>
+                                 to={`/${paths.slice(0, index + 1).join("/")}`}>{" >> "}{objPath[path]?.title || categoryData?.find((category: any) => category.path === path)?.title || productData?.find((product: any) => product._id === path)?.title || ""}</Link>
         }
     })
     return (

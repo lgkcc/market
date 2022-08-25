@@ -10,6 +10,7 @@ import {
 import newSvg from '../../assets/new.svg'
 import {useSearchCategoriesQuery} from "../../store/market/market.api";
 import {Link} from "react-router-dom";
+import {HEROKU} from "../../constants/urls";
 
 
 const LeftSideBar = () => {
@@ -40,8 +41,8 @@ const LeftSideBar = () => {
                     </BurgerMenuInner>
                 </BurgerMenu>
                 {
-                    categoryData?.map((category:any) => <Link to={`/menu/${category.path}`}><ImageWrapper key={category._id} name={category.title}>
-                        <Image src={category.miniImageUrl || newSvg}/>
+                    categoryData?.map((category:any) => <Link  key={category._id} to={`/menu/${category.path}`}><ImageWrapper name={category.title}>
+                        <Image src={`${HEROKU}${category.miniImageUrl || newSvg}`}/>
                     </ImageWrapper></Link>)
                 }
             </LeftSideBarInner>

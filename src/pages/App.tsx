@@ -3,6 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import {ERoutes} from "../models/routes/routes";
 import LayoutUser from "../containers/Layout-user/LayoutUser";
 import Menu from "./user/Menu/Menu";
+import Categories from "./user/Categories/Categories";
 
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
             <Route path={ERoutes.USER} element={<LayoutUser/>}>
                 <Route index element={<h1>ЮЗЕР-MAIN</h1>}/>
                 <Route path={ERoutes.MENU} element={<Menu/>}/>
-                <Route path={ERoutes.CATEGORY} element={<h1>ЮЗЕР-CATEGORY</h1>}/>
+                <Route path={ERoutes.CATEGORY} element={<Categories/>}/>
                 <Route path={ERoutes.PRODUCT} element={<h1>ЮЗЕР-ONE</h1>}/>
             </Route>
         </Routes>
