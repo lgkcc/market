@@ -11,7 +11,7 @@ const Menu = () => {
     return (
         <ItemWrapper>
             {
-                categoryData?.map((categoryData:any) => <CategoryItem title={categoryData.title}/>)
+                categoryData?.map((categoryData:any) => <CategoryItem {...categoryData}/>)
             }
         </ItemWrapper>
     );

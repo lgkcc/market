@@ -9,6 +9,7 @@ import {
 } from "./LeftSideBar.styles";
 import newSvg from '../../assets/new.svg'
 import {useSearchCategoriesQuery} from "../../store/market/market.api";
+import {Link} from "react-router-dom";
 
 
 const LeftSideBar = () => {
@@ -39,9 +40,9 @@ const LeftSideBar = () => {
                     </BurgerMenuInner>
                 </BurgerMenu>
                 {
-                    categoryData?.map((category:any) => <ImageWrapper key={category._id} name={category.title}>
+                    categoryData?.map((category:any) => <Link to={`/menu/${category.path}`}><ImageWrapper key={category._id} name={category.title}>
                         <Image src={category.miniImageUrl || newSvg}/>
-                    </ImageWrapper>)
+                    </ImageWrapper></Link>)
                 }
             </LeftSideBarInner>
         </LeftSideBarWrapper>
