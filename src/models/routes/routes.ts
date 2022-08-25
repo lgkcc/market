@@ -1,7 +1,7 @@
 export enum ERoutes {
     USER = '/',
     MENU = 'menu',
-    CATEGORY = 'menu/:id',
-    PRODUCT = 'menu/:category/:id',
+    CATEGORY = 'menu/:categoryName',
+    PRODUCT = 'menu/:categoryName/:id',
     ADMIN = '/admin'
 }

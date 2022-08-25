@@ -7,4 +7,5 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   margin-top: 107px;
   margin-left: 160px;
+  margin-right: 70px;
 `
