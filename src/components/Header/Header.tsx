@@ -16,7 +16,7 @@ const Header = () => {
                 <RightBar>
                     <Search openSearch={openSearch} setOpenSearch={setOpenSearch}/>
                     <Navigation/>
-                    <HeaderMenu><Image src={userSvg} alt=""/><Image src={basketSvg} alt=""/></HeaderMenu>
+                    <HeaderMenu><Link to={ERoutes.PROFILE}><Image src={userSvg} alt=""/></Link><Image src={basketSvg} alt=""/></HeaderMenu>
                 </RightBar>
             </HeaderInner>
         </HeaderWrapper>
